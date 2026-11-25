@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farzona Birthday ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;text-align:center;color:white;
+ font-family:Georgia,serif;
+ min-height:100vh;
+ background:linear-gradient(150deg,#e9a8d4,#9464b7,#291638);
+ overflow-x:hidden;
+}
+main{padding:35px 20px;max-width:520px;margin:auto}
+h1{font-size:55px;color:#ffe2f4;text-shadow:0 0 20px #fff}
+.date{letter-spacing:6px;font-size:20px;color:#ffe5b7}
+.card{
+ background:#ffffff20;border:1px solid #ffffff55;
+ border-radius:25px;padding:24px;margin:25px 0;
+}
+p{line-height:1.8;font-size:18px}
+button{
+ background:#ffd2ec;color:#57244e;border:0;
+ border-radius:30px;padding:15px 25px;
+ font-size:16px;margin:10px;font-weight:bold;
+}
+.hidden{display:none}
+#gift{font-size:75px;cursor:pointer}
+#flowers{font-size:45px}
+</style>
+</head>
+<body>
+<main>
+<div id="flowers">🌷 🦋 🌸 🦋 🌷</div>
+<p>BUGUNGI KUN FAQAT SEN UCHUN</p>
+<h1>Farzona</h1>
+<div class="date">2 DEKABR</div>
+<h2>🎂 Tug‘ilgan kuning muborak! 🎂</h2>
+
+<div class="card">
+<p>Ba’zi insonlar hayotimizga kirib kelib, uni yanada go‘zal qiladi...</p>
+<p>Bugun ana shunday go‘zal insonning bayrami!</p>
+</div>
+
+<div class="card">
+<div id="gift" onclick="openGift()">🎁</div>
+<p>Senga atalgan sovg‘ani och!</p>
+<div id="letter" class="hidden">
+<h2>💌 Aziz Farzona!</h2>
+<p>
+Tug‘ilgan kuning muborak!
+Hayoting doimo gullardek go‘zal bo‘lsin.
+Barcha orzularing amalga oshsin.
+Yuzingdan tabassum, qalbingdan quvonch
+hech qachon arimasin.
+Sen eng go‘zal tilaklarga loyiqsan!
+</p>
+<h3>Seni qadrlaydigan insondan ❤️</h3>
+</div>
+</div>
+
+<div class="card">
+<div style="font-size:60px">🎂</div>
+<p>Tilak tila va shamlarni o‘chir!</p>
+<button onclick="wish()">✨ Shamlarni o‘chirish</button>
+<h3 id="wish" class="hidden">Barcha orzularing amalga oshsin! 🌟</h3>
+</div>
+
+<button onclick="party()">🎆 Bayramni boshlash</button>
+<p>🌹 Mehr bilan tayyorlandi 🌹</p>
+</main>
+
+<script>
+function openGift(){
+ document.getElementById('letter').classList.remove('hidden');
+ document.getElementById('gift').innerText='💝';
+}
+function wish(){
+ document.getElementById('wish').classList.remove('hidden');
+}
+function party(){
+ for(let i=0;i<30;i++){
+  let x=document.createElement('div');
+  x.innerText=['✨','💖','🌸','🎉','🦋'][i%5];
+  x.style.cssText='position:fixed;left:'+Math.random()*95+
+  'vw;top:'+Math.random()*90+'vh;font-size:30px;pointer-events:none';
+  document.body.appendChild(x);
+  setTimeout(()=>x.remove(),2500);
+ }
+}
+</script>
+</body>
+</html>
